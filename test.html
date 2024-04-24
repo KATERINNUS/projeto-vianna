@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=smoothscroll"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Site de Música</title>
+   
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header id="top">
+        <a href="#main"><img src="./assets/Logo.png" alt="Logo" class="logo"></a>
+        <audio controls class="audio-player">
+            <source src="./assets/audio.mp3" type="audio/mpeg">
+        </audio>
+        <nav>
+            <ul>
+                
+                <li><a href="#music">Music</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Principal -->
+    <main id="main">
+    
+        <div class="main-container">
+            <!-- Container para a imagem -->
+            <div class="container">
+                <h2>Imagem</h2>
+                <div class="slideshow-container">
+                    <div class="slides">
+                        <div class="slide"><img src="./assets/fvianna2.PNG" alt="F.vianna"></div>
+                        <div class="slide"><img src="./assets/vianna.PNG" alt="F.vianna"></div>
+                    </div>
+                </div>
+            </div>
+    </main>
+            <!-- Container para o display de música -->
+
+            <div class="display-music" id="music">
+                <div class="audio-container">
+                    <img src="./assets/set.PNG" alt="São-Jorge-Set" class="disk-image">
+                    <audio controls class="audio-player">
+                        <source src="./assets/audio.mp3" type="audio/mpeg">
+                    </audio>
+                    <h2>Display de Música</h2>
+                    <!-- Aqui você pode adicionar o player de música, como <audio> ou incorporar um serviço de streaming de música -->
+                </div>
+            </div>
+
+        <article class="container-about" id="sobre">
+
+            <img class="perfil" src="./assets/image.png" alt="Vianna-image">
+
+            <div class="text">
+            <p> Meu nome é Felipe Vianna @f.vianna , menino preto nascido em 1993 quando o sol estava em câncer. Pai da Sophie, Mult artista (Diretor criativo, Fotógrafo, Diretor, Vídeomaker, Dj, Influencer, Articulador Cultural, Artista Visual, Grafiteiro) De um tudo um pouco e querendo ser um pouco mais.
+                Gasto minha existência fazendo as coisas existirem. Há 9 anos invento moda, registro o que vejo, passo pro mundo o que gosto, tento caber onde meu povo não coube. Dentre algumas coisas que resumem onde estive, cito a Revista Vogue, SPFW ja trabalhei com marcas como Facebook, Tidal, Spotfy, Heineken, Budweiser, 99, Hering. ja toquei a abertura do show do KL Jay do FBC e Vhoor. Criador do @StudioF.Vianna, fiz com que o centro conhecesse o São Jorge, que o São Jorge conhecesse o Beco – espaço da periferia revitalizado por meio da arte: o @becosj. moro em São Paulo, mas desejo mesmo estar no topo. Pretos no topo e eu falo sério.</p>
+            </div>
+        </article>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Meu Site de Música</p>
+    </footer>
+
+    <script>
+        // funcao slide de imagens
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll(".slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000)
+        }
+
+        function scrollToSection(elementId) {
+            const element = document.getElementById(elementId)
+            if (element) {
+                element.scrollIntoView({
+                    behavior: "smooth"
+                })
+            }
+        }
+    </script>
+
+</body>
+
+</html>
